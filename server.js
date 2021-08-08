@@ -1,7 +1,6 @@
 const server = require('http');
-const readFile = require('./readFile');
-
-server.createServer(onRequest).listen(8000);
+const routes = require('./routes/routes');
+server.createServer(routes.handleRoutes).listen(3000);
 
 function onRequest(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
